@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">LastTest</string>
+    <string name="title_activity_map">Карта</string>
+    <string name="show_all_objects">Показати усі об’єкти з БД</string>
+    <string name="show_object_near">Показати об’єкти поблизу</string>
+    <string name="clear_map">Очистити карту</string>
+    <string name="menu">Меню</string>
+    <string name="map">Карта</string>
+    <string name="data_base">База данних</string>
+    <string name="menu_db">Меню бази даних</string>
+    <string name="review">Переглянути</string>
+    <string name="add_object">Додати об’єкт</string>
+    <string name="clear_data_base">Очисти базу даних</string>
+    <string name="db_repair">Відновити БД</string>
+    <string name="exit">Вихід</string>
+    <string name="search">Пошук</string>
+    <string name="add">Додати</string>
+    <string name="All">Всі</string>
+    <string name="Cinema">кінотеатр</string>
+    <string name="Cafe">кафе</string>
+    <string name="Hotel">готель</string>
+    <string name="Shop">магазин</string>
+    <string name="Museum">музей</string>
+    <string name="Monument">цікаве місце</string>
+    <string name="Theatre">театр</string>
+
+    <string name="NAME">Назва</string>
+    <string name="LONGITUDE">Довгота</string>
+    <string name="LATITUDE">Широта</string>
+    <string name="my_location">Використати моє місцезнаходження</string>
+    <string name="PHONE_NUMBER">Номер телефону</string>
+    <string name="WEBSITE">Веб-сайт</string>
+    <string name="MARK">Оцінка</string>
+    <string name="WORK_TIME">Графік роботи</string>
+    <string name="TECHNOLOGY">Формати</string>
+    <string name="Tech_2D">2D</string>
+    <string name="Tech_3D">3D</string>
+    <string name="Tech_imax">IMAX</string>
+    <string name="type_cusine">Вид кухні</string>
+    <string name="ACCEPT">Прийняти</string>
+    <string name="CANCEL">Відмінити</string>
+    <string name="addCinema">Додати кінотеатр</string>
+
+
+</resources>

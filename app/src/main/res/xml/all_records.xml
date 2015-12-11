@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<object>
+    <record
+        name = "Music Lab"
+        image_url = "http://lviv-online.com/ua/wp-content/uploads/2011/10/musiclab.jpg"
+        category = "cafe"
+        longitude = "49.8404527"
+        latitude = "24.0330997"
+        description = "test"
+        phone = "0322 948 715"
+        website = "musiclab.ua"
+        mark = "5"
+        worktime = "00:00-24:00" />
+    <record
+        name = "Маки"
+        image_url = "http://lviv-online.com/ua/wp-content/uploads/2013/09/Maky.png"
+        category = "cafe"
+        longitude = "49.8387975"
+        latitude = "24.0228992"
+        description = ""
+        phone = "050 317 6079"
+        website = "https://www.facebook.com/maky.sushi"
+        mark = "4"
+        worktime = "08:00-00:00 " />
+    <record
+        name = "Americano"
+        image_url = "http://lviv-online.com/ua/wp-content/uploads/2014/01/americano.jpg"
+        category = "cafe"
+        longitude = "49.83724"
+        latitude = "24.0302713"
+        description = ""
+        phone = "063 933 1331"
+        website = "americano.032.ua"
+        mark = "5"
+        worktime = "11:00-23:00"/>
+    <record
+        name = "Планета Кіно"
+        image_url = "https://upload.wikimedia.org/wikipedia/uk/2/2a/Planeta_Kino_Logo_nove.png"
+        category = "cinema"
+        longitude = "49.849750"
+        latitude = "24.023585"
+        description = ""
+        phone = "0-800-300-600"
+        website = "http://planetakino.ua/"
+        mark = "5"
+        worktime = "null"/>
+    <record
+        name="Кінопалац імені О.Довженка"
+        image_url = "https://upload.wikimedia.org/wikipedia/commons/9/9c/Kinopalace_logo.png"
+        category = "cinema"
+        longitude = "49.795252"
+        latitude = "24.057676"
+        description = ""
+        phone = "032-2216131"
+        website = "http://www.kinopalace.lviv.ua/"
+        mark = "5"
+        worktime = "null"/>
+    <record
+        name = "Копернік"
+        image_url = "http://lviv-online.com/ua/wp-content/uploads/2013/01/kinopalac-kopernik-logo.png"
+        category = "cinema"
+        longitude = "49.8390281"
+        latitude = "24.0271169"
+        description = ""
+        phone = "0322 975 177"
+        website = "kopernik.kinopalace.lviv.ua "
+        mark = "4"
+        worktime = "null"/>
+    <record
+        name = "Inn Lviv"
+        image_url = "http://lviv-online.com/ua/wp-content/uploads/2015/01/innlvivgh_logo.jpg"
+        category = "hotel"
+        longitude = "49.8336344"
+        latitude = "24.0370064"
+        description = ""
+        phone = "0322 538 303"
+        website = "nnlviv.com"
+        mark = "4"
+        worktime = "Заїзд: з 14:00 / Від’їзд: до 12:00" />
+    <record
+        name = "Соната"
+        image_url = "http://lviv-online.com/ua/wp-content/uploads/2011/10/hotel_sonata.png"
+        category = "hotel"
+        longitude = "49.7964944"
+        latitude = "24.0670543"
+        description = ""
+        phone = "0322 325 005"
+        website = "sonatahotel.com.ua "
+        mark = "3"
+        worktime = "null" />
+    <record
+        name = "Едем"
+        image_url = "http://lviv-online.com/ua/wp-content/uploads/2011/06/edem.jpg"
+        category = "hotel"
+        longitude = "49.7965876"
+        latitude = "23.9992035"
+        description = ""
+        phone = "0322 403 105"
+        website = "hotel-edem.lviv.ua"
+        mark = "4"
+        worktime = "Поселення(check in):13:00 / Виселення(check out):12:00" />
+    <record
+        name = "Пам`ятник Данилу Галицькому"
+        image_url = "http://lviv.comments.ua/img/20120830131446.jpg"
+        category = "monument"
+        longitude = "49.8393095"
+        latitude = "24.032525"
+        description = ""
+        phone = "null"
+        website = "null"
+        mark = "5"
+        worktime = "null"/>
+    <record
+        name = "Пам`ятник Івану Франку"
+        image_url = "http://www.dlab.com.ua/guide/photo_lvov/73.jpg"
+        category = "monument"
+        longitude = "49.8396857"
+        latitude = "24.0190101"
+        description = ""
+        phone = "null"
+        website = "null"
+        mark = "5"
+        worktime = "null"/>
+    <record
+        name = "Аптека-музей &quot;Під чорним орлом&quot;"
+        image_url = "https://storage.googleapis.com/static.panoramio.com/photos/medium/73942154.jpg"
+        category = "museum"
+        longitude = "49.8426596"
+        latitude = "24.0301747"
+        description = ""
+        phone = "(032) 272-00-41"
+        website = "www.apteka.iatp.org.ua"
+        mark = "5"
+        worktime = "null"/>
+    <record
+        name = "Музей &quot;Личаківський цвинтар&quot;"
+        image_url = "https://storage.googleapis.com/static.panoramio.com/photos/large/83498578.jpg"
+        category = "museum"
+        longitude = "49.8324637"
+        latitude = "24.0539022"
+        description = ""
+        phone = "(032) 275-54-15"
+        website = "www.lviv-lychakiv.ukrain.travel"
+        mark = "5"
+        worktime = "null"/>
+    <record
+        name = "Горгани ком"
+        image_url = "http://cv.vj.ua/upload/gorgani.com_1_sm.jpg"
+        category = "shop"
+        longitude = "49.8415734"
+        latitude = "24.0222183"
+        description = ""
+        phone = "322403014"
+        website = "www.gorgany.com"
+        mark = "5"
+        worktime = "null"/>
+    <record
+        name = "Робінзон"
+        image_url = "http://www.robinzon-ua.com.ua/files///logos/logo2.gif"
+        category = "shop"
+        longitude = "49.8376124"
+        latitude = "24.0074593"
+        description = ""
+        phone = "322471947"
+        website = "www.robinzon-ua.com.ua"
+        mark = "5"
+        worktime = "null"/>
+    <record
+        name = "Воскресіння"
+        image_url = "https://upload.wikimedia.org/wikipedia/uk/thumb/4/46/%D0%9B%D1%8C%D0%B2%D1%96%D0%B2_%D0%A2%D0%B5%D0%B0%D1%82%D1%80_%D0%92%D0%BE%D1%81%D0%BA%D1%80%D0%B5%D1%81%D1%96%D0%BD%D0%BD%D1%8F.jpg/450px-%D0%9B%D1%8C%D0%B2%D1%96%D0%B2_%D0%A2%D0%B5%D0%B0%D1%82%D1%80_%D0%92%D0%BE%D1%81%D0%BA%D1%80%D0%B5%D1%81%D1%96%D0%BD%D0%BD%D1%8F.jpg"
+        category = "theatre"
+        longitude = "49.8418695"
+        latitude = "24.0208657"
+        description = ""
+        phone = "(032) 261 63 10"
+        website = "www.voskresinnia.eu"
+        mark = "5"
+        worktime = "null"/>
+    <record
+        name = "Львівський драматичний театр імені Лесі Українки"
+        image_url = "https://lh5.googleusercontent.com/-E5jalUOEpz0/U5zYM3Yq__I/AAAAAAAAAIs/QBox9Tuj3CU/s408-k-no/"
+        category = "theatre"
+        longitude = "49.8420248"
+        latitude = "24.0139885"
+        description = ""
+        phone = "(032) 233-31-88"
+        website = "www.ldt-ukrainky.lviv.ua"
+        mark = "5"
+        worktime = "null"/>
+</object>
