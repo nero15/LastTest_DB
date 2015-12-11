@@ -30,6 +30,13 @@
         android:layout_height="wrap_content" />
 
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Anketa"
+        android:id="@+id/id_Register_Anketa"
+        android:onClick="onClickRegisterAnketa" />
+
+    <Button
         android:id="@+id/btnNewAccount"
         android:text="Register"
         android:layout_width="match_parent"

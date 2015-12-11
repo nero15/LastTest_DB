@@ -11,7 +11,8 @@
         phone = "0322 948 715"
         website = "musiclab.ua"
         mark = "5"
-        worktime = "00:00-24:00" />
+        worktime = "00:00-24:00"
+        costs = "free"/>
     <record
         name = "Маки"
         image_url = "http://lviv-online.com/ua/wp-content/uploads/2013/09/Maky.png"
@@ -22,7 +23,8 @@
         phone = "050 317 6079"
         website = "https://www.facebook.com/maky.sushi"
         mark = "4"
-        worktime = "08:00-00:00 " />
+        worktime = "08:00-00:00 "
+        costs = "free"/>
     <record
         name = "Americano"
         image_url = "http://lviv-online.com/ua/wp-content/uploads/2014/01/americano.jpg"
@@ -33,7 +35,8 @@
         phone = "063 933 1331"
         website = "americano.032.ua"
         mark = "5"
-        worktime = "11:00-23:00"/>
+        worktime = "11:00-23:00"
+        costs = "free"/>
     <record
         name = "Планета Кіно"
         image_url = "https://upload.wikimedia.org/wikipedia/uk/2/2a/Planeta_Kino_Logo_nove.png"
@@ -44,7 +47,8 @@
         phone = "0-800-300-600"
         website = "http://planetakino.ua/"
         mark = "5"
-        worktime = "null"/>
+        worktime = "null"
+        costs = "free"/>
     <record
         name="Кінопалац імені О.Довженка"
         image_url = "https://upload.wikimedia.org/wikipedia/commons/9/9c/Kinopalace_logo.png"
@@ -55,7 +59,8 @@
         phone = "032-2216131"
         website = "http://www.kinopalace.lviv.ua/"
         mark = "5"
-        worktime = "null"/>
+        worktime = "null"
+        costs = "free"/>
     <record
         name = "Копернік"
         image_url = "http://lviv-online.com/ua/wp-content/uploads/2013/01/kinopalac-kopernik-logo.png"
@@ -66,7 +71,8 @@
         phone = "0322 975 177"
         website = "kopernik.kinopalace.lviv.ua "
         mark = "4"
-        worktime = "null"/>
+        worktime = "null"
+        costs = "free"/>
     <record
         name = "Inn Lviv"
         image_url = "http://lviv-online.com/ua/wp-content/uploads/2015/01/innlvivgh_logo.jpg"
@@ -77,7 +83,8 @@
         phone = "0322 538 303"
         website = "nnlviv.com"
         mark = "4"
-        worktime = "Заїзд: з 14:00 / Від’їзд: до 12:00" />
+        worktime = "Заїзд: з 14:00 / Від’їзд: до 12:00"
+        costs = "free"/>
     <record
         name = "Соната"
         image_url = "http://lviv-online.com/ua/wp-content/uploads/2011/10/hotel_sonata.png"
@@ -88,7 +95,8 @@
         phone = "0322 325 005"
         website = "sonatahotel.com.ua "
         mark = "3"
-        worktime = "null" />
+        worktime = "null"
+        costs = "free"/>
     <record
         name = "Едем"
         image_url = "http://lviv-online.com/ua/wp-content/uploads/2011/06/edem.jpg"
@@ -99,7 +107,8 @@
         phone = "0322 403 105"
         website = "hotel-edem.lviv.ua"
         mark = "4"
-        worktime = "Поселення(check in):13:00 / Виселення(check out):12:00" />
+        worktime = "Поселення(check in):13:00 / Виселення(check out):12:00"
+        costs = "free"/>
     <record
         name = "Пам`ятник Данилу Галицькому"
         image_url = "http://lviv.comments.ua/img/20120830131446.jpg"
@@ -110,7 +119,8 @@
         phone = "null"
         website = "null"
         mark = "5"
-        worktime = "null"/>
+        worktime = "null"
+        costs = "free"/>
     <record
         name = "Пам`ятник Івану Франку"
         image_url = "http://www.dlab.com.ua/guide/photo_lvov/73.jpg"
@@ -121,7 +131,8 @@
         phone = "null"
         website = "null"
         mark = "5"
-        worktime = "null"/>
+        worktime = "null"
+        costs = "free"/>
     <record
         name = "Аптека-музей &quot;Під чорним орлом&quot;"
         image_url = "https://storage.googleapis.com/static.panoramio.com/photos/medium/73942154.jpg"
@@ -132,7 +143,8 @@
         phone = "(032) 272-00-41"
         website = "www.apteka.iatp.org.ua"
         mark = "5"
-        worktime = "null"/>
+        worktime = "null"
+        costs = "free"/>
     <record
         name = "Музей &quot;Личаківський цвинтар&quot;"
         image_url = "https://storage.googleapis.com/static.panoramio.com/photos/large/83498578.jpg"
@@ -143,7 +155,8 @@
         phone = "(032) 275-54-15"
         website = "www.lviv-lychakiv.ukrain.travel"
         mark = "5"
-        worktime = "null"/>
+        worktime = "null"
+        costs = "free"/>
     <record
         name = "Горгани ком"
         image_url = "http://cv.vj.ua/upload/gorgani.com_1_sm.jpg"
@@ -154,7 +167,8 @@
         phone = "322403014"
         website = "www.gorgany.com"
         mark = "5"
-        worktime = "null"/>
+        worktime = "null"
+        costs = "free"/>
     <record
         name = "Робінзон"
         image_url = "http://www.robinzon-ua.com.ua/files///logos/logo2.gif"
@@ -165,7 +179,8 @@
         phone = "322471947"
         website = "www.robinzon-ua.com.ua"
         mark = "5"
-        worktime = "null"/>
+        worktime = "null"
+        costs = "free"/>
     <record
         name = "Воскресіння"
         image_url = "https://upload.wikimedia.org/wikipedia/uk/thumb/4/46/%D0%9B%D1%8C%D0%B2%D1%96%D0%B2_%D0%A2%D0%B5%D0%B0%D1%82%D1%80_%D0%92%D0%BE%D1%81%D0%BA%D1%80%D0%B5%D1%81%D1%96%D0%BD%D0%BD%D1%8F.jpg/450px-%D0%9B%D1%8C%D0%B2%D1%96%D0%B2_%D0%A2%D0%B5%D0%B0%D1%82%D1%80_%D0%92%D0%BE%D1%81%D0%BA%D1%80%D0%B5%D1%81%D1%96%D0%BD%D0%BD%D1%8F.jpg"
@@ -176,7 +191,8 @@
         phone = "(032) 261 63 10"
         website = "www.voskresinnia.eu"
         mark = "5"
-        worktime = "null"/>
+        worktime = "null"
+        costs = "free"/>
     <record
         name = "Львівський драматичний театр імені Лесі Українки"
         image_url = "https://lh5.googleusercontent.com/-E5jalUOEpz0/U5zYM3Yq__I/AAAAAAAAAIs/QBox9Tuj3CU/s408-k-no/"
@@ -187,5 +203,358 @@
         phone = "(032) 233-31-88"
         website = "www.ldt-ukrainky.lviv.ua"
         mark = "5"
-        worktime = "null"/>
+        worktime = "null"
+        costs = "free"/>
+
+    <record
+        name = "Воскресіння"
+        image_url = "https://upload.wikimedia.org/wikipedia/uk/thumb/4/46/%D0%9B%D1%8C%D0%B2%D1%96%D0%B2_%D0%A2%D0%B5%D0%B0%D1%82%D1%80_%D0%92%D0%BE%D1%81%D0%BA%D1%80%D0%B5%D1%81%D1%96%D0%BD%D0%BD%D1%8F.jpg/450px-%D0%9B%D1%8C%D0%B2%D1%96%D0%B2_%D0%A2%D0%B5%D0%B0%D1%82%D1%80_%D0%92%D0%BE%D1%81%D0%BA%D1%80%D0%B5%D1%81%D1%96%D0%BD%D0%BD%D1%8F.jpg"
+        category = "theatre"
+        longitude = "49.8418695"
+        latitude = "24.0208657"
+        description = ""
+        phone = "(032) 261 63 10"
+        website = "www.voskresinnia.eu"
+        mark = "5"
+        worktime = "null"
+        costs = "free" />
+    <record
+        name = "Преображенська церква"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add729ced1e45:0x4d233d0d2d10b416!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://ssl.panoramio.com/photo/38185769!5zIC0g0J_QvtGI0YPQuiBHb29nbGU"
+        category = "monument"
+        longitude = "49.8436"
+        latitude = "24.029342"
+        description = "Розташована на території центральної частини міста. Постала на місці костелу Найсвятішої Трійці отців Тринітаріїв"
+        phone = "(032) 255 35 55"
+        website = "http://www.hramspasa.org.ua/"
+        mark = "4.7"
+        worktime = "null"
+        costs = "free"/>
+    <record
+        name = "Церква стрітення гніх"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add134a0b7afb:0x32cb8e805f855131!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://ssl.panoramio.com/photo/28025618!5zIC0g0J_QvtGI0YPQuiBHb29nbGUhttps://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add134a0b7afb:0x32cb8e805f855131!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://ssl.panoramio.com/photo/28025618!5zIC0g0J_QvtGI0YPQuiBHb29nbGU"
+        category = "monument"
+        longitude = "49.841056"
+        latitude = "24.046583"
+        description = "Колишній костел Матері Божої Громничої і монастир кармеліток босих"
+        phone = "(032) 279 72 08"
+        website = "http://www.ugcc.lviv.ua/"
+        mark = "4.5"
+        worktime = "null"
+        costs = "free"/>
+    <record
+        name = "Архикатедральний Собор Святого Юра"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add77635329f9:0x49aa812d78ffd1cc!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://ssl.panoramio.com/photo/37389389!5zIC0g0J_QvtGI0YPQuiBHb29nbGU"
+        category = "monument"
+        longitude = "49.838542"
+        latitude = "24.013039"
+        description = "Вважається головною святинею українських греко-католиків.Розташований на Святоюрській горі."
+        phone = "(032) 261 13 86"
+        website = "http://sobor-svyura.lviv.ua/"
+        mark = "4.8"
+        worktime = "07:30-20:00"
+        costs = "free"/>
+    <record
+        name = "Храм святих Ольги і Єлизавети"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add82643a33bb:0x429b74dc7e0ceafe!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://ssl.panoramio.com/photo/56053254!5zIC0g0J_QvtGI0YPQuiBHb29nbGU"
+        category = "monument"
+        longitude = "49.836944"
+        latitude = "24.005"
+        description = "Костел збудовано в пам'ять про популярну імператрицю Єлизавету Баварську (Габсбурґ), відому як Сісі, дружину імператора Австро-Угорщини Франца-Йосифа I."
+        phone = "(032) 233 40 73"
+        website = "http://olha-church.org.ua/web/"
+        mark = "4.9"
+        worktime = "07:30-20:00"
+        costs = "free"/>
+    <record
+        name = "Храм Різдва Пресвятої Богородиці"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473ae872a8237d75:0x77132b43a0526f37!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://ssl.panoramio.com/photo/106389001!5zIC0g0J_QvtGI0YPQuiBHb29nbGU"
+        category = "monument"
+        longitude = "49.793056"
+        latitude = "24.056111"
+        description = "Греко-католицький храм на Сихові"
+        phone = "(032) 222 27 32"
+        website = "null"
+        mark = "4.5"
+        worktime = "null"
+        costs = "free"/>
+    <record
+        name = "Храм Святої Анни"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add769fe24477:0x670673737bdc0fc8!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://ssl.panoramio.com/photo/80627614!5zIC0g0J_QvtGI0YPQuiBHb29nbGU"
+        category = "monument"
+        longitude = "49.842578"
+        latitude = "24.017228"
+        description = "Греко-католицький храм у Львові. Колишній костел святої Анни."
+        phone = "(032) 233 31 72"
+        website = "http://sv-anna.at.ua/"
+        mark = "4.7"
+        worktime = "null"
+        costs = "free"/>
+    <record
+        name = "Латинська катедра"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add6dcf1be9b5:0x5716fbbb359dd536!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://ssl.panoramio.com/photo/37534423!5zIC0g0J_QvtGI0YPQuiBHb29nbGU"
+        category = "monument"
+        longitude = "49.840861"
+        latitude = "24.031139"
+        description = "Католицька базиліка, головний храм Львівської архідієцезії Римо-Католицької Церкви на Катедральній площі у Львові, Україна. Пам'ятка сакральної архітектури XIV—XVIII століття."
+        phone = "(032) 222 27 32"
+        website = "null"
+        mark = "4.8"
+        worktime = "null"
+        costs = "free"/>
+    <record
+        name = "Церква святих апостолів Петра і Павла"
+        image_url = "https://www.google.com.ua/search?q=%D1%86%D0%B5%D1%80%D0%BA%D0%B2%D0%B8+%D0%BB%D1%8C%D0%B2%D0%BE%D0%B2%D0%B0+%D0%BF%D0%B5%D1%82%D1%80%D0%B0+%D1%96+%D0%BF%D0%B0%D0%B2%D0%BB%D0%B0&amp;sa=X&amp;biw=1366&amp;bih=643&amp;tbm=isch&amp;imgil=txMl1kAcS5CYSM%253A%253Bi0-s9LqzLj-yNM%253Bhttp%25253A%25252F%25252Fvelychlviv.com%25252Fdopomogty-ukrayinskij-armiyi-u-lvovi-mozhna-cherez-nadijni-fondy-ugkts%25252F&amp;source=iu&amp;pf=m&amp;fir=txMl1kAcS5CYSM%253A%252Ci0-s9LqzLj-yNM%252C_&amp;dpr=1&amp;usg=__64FVPSaPanRLeuoNCL318YfpyxU%3D&amp;ved=0ahUKEwiH5I-16dPJAhUiAHMKHTiFB1UQyjcIKA&amp;ei=kcNqVsfXIqKAzAO4ip6oBQ"
+        category = "monument"
+        longitude = "49.8383"
+        latitude = "24.054725"
+        description = "Культова споруда у Львові. Пам'ятка архітектури XVII століття."
+        phone = "(032) 235 76 76"
+        website = "null"
+        mark = "4.6"
+        worktime = "null"
+        costs = "free"/>
+    <record
+        name = "Костел єзуїтів"
+        image_url = "https://www.google.com.ua/search?q=%D1%86%D0%B5%D1%80%D0%BA%D0%B2%D0%B8+%D0%BB%D1%8C%D0%B2%D0%BE%D0%B2%D0%B0+%D0%BF%D0%B5%D1%82%D1%80%D0%B0+%D1%8B+%D0%BF%D0%B0%D0%B2%D0%BB%D0%B0&amp;biw=1366&amp;bih=643&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwig3P6z6dPJAhUppnIKHRsuAhMQ_AUIBygC&amp;dpr=1#tbm=isch&amp;q=%D0%BA%D0%BE%D1%81%D1%82%D0%B5%D0%BB+%D1%94%D0%B7%D1%83%D1%97%D1%82%D1%96%D0%B2&amp;imgrc=VP1tG6ggjjMe9M%3A"
+        category = "monument"
+        longitude = "49.8415"
+        latitude = "24.0291"
+        description = "Це — перша пам'ятка барочної архітектури у Львові."
+        phone = "null"
+        website = "http://petrapavla.org.ua/"
+        mark = "4.9"
+        worktime = "07:30-20:00"
+        costs = "free"/>
+    <record
+        name = "Голодний Микола"
+        image_url = "https://www.google.com.ua/search?q=%D0%B3%D0%BE%D0%BB%D0%BE%D0%B4%D0%BD%D0%B8%D0%B9+%D0%BC%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0&amp;biw=1366&amp;bih=643&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;sqi=2&amp;ved=0ahUKEwjaqs3M69PJAhUhwHIKHRX0BNMQ_AUIBigB#imgrc=bYr2xXbpXCOwhM%3A"
+        category = "сafe"
+        longitude = "49.777079"
+        latitude = "24.012917"
+        description = "Голодний Микола» – найбільший у світі ресторан галицької кухні."
+        phone = "(032) 232 96 06"
+        website = "http://mykola.kumpelgroup.com/"
+        mark = "4.7"
+        worktime = "12:00 – 24:00"
+        costs = "free"/>
+    <record
+        name = "Valentino Restaurant"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add692ceaa9f5:0xd93b3b001c1cf02e!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://picasaweb.google.com/lh/sredir?uname%3D100895785039058780775%26id%3D5992456687009934610%26target%3DPHOTO!5zIC0g0J_QvtGI0YPQuiBHb29nbGU"
+        category = "сafe"
+        longitude = "49.837104"
+        latitude = "24.032527"
+        description = "Ресторан італійської кухні."
+        phone = "(032) 235 67 66"
+        website = "http://valentino.lviv.ua/uk"
+        mark = "4.7"
+        worktime = "07:00 – 23:00"
+        costs = "free"/>
+    <record
+        name = "Vapiano"
+        image_url = "https://www.google.com.ua/search?q=%D0%B2%D0%B0%D0%BF%D1%96%D0%B0%D0%BD%D0%BE+%D0%BB%D1%8C%D0%B2%D1%96%D0%B2&amp;biw=1366&amp;bih=643&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwjF5r2f8NPJAhXnvHIKHaJuBlwQ_AUIBygB#imgrc=L6hhltjdebLuUM%3A"
+        category = "сafe"
+        longitude = "49.842874"
+        latitude = "24.024467"
+        description = "Другий в Україні ресторан Vapiano пропонує страви італійської кухні."
+        phone = "(067) 641 80 16"
+        website = "http://ua.vapiano.com/uk/home/"
+        mark = "4.3"
+        worktime = "10:00 – 24:00"
+        costs = "free"/>
+    <record
+        name = "Ресторація Бачевських"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add6d9bb8fee5:0x29a70f7e015e9f26!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://picasaweb.google.com/lh/sredir?uname%3D106145510801339714176%26id%3D6224117039748499362%26target%3DPHOTO!5z0LHQsNGH0LXQstGB0YzQutC40YUgLSDQn9C-0YjRg9C6IEdvb2dsZQ&amp;sa=X&amp;ved=0ahUKEwjd6YGY8tPJAhUFp3IKHaVKCgIQoioIdTAN"
+        category = "сafe"
+        longitude = "49.842217"
+        latitude = "24.029886"
+        description = "Родина Бачевських і їхнє творіння – горілка Baczewski – це одні з головних героїв веселого Львова з тих золотих часів, коли у нашому місті в казино програвалися мільйони, а на наші вар’єте і кабаре приїжджали подивитися багатії з усієї Європи.."
+        phone = "(098) 224 4444"
+        website = "http://kumpelgroup.com/restaurants/baczewski/"
+        mark = "4.2"
+        worktime = "08:00 – 00:00"
+        costs = "free"/>
+
+    <record
+        name = "Ресторан імпровізації &quot;Грушевський cinema jazz&quot;"
+        image_url = "https://www.google.com.ua/search?q=%D1%80%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD+%D0%B3%D1%80%D1%83%D1%88%D0%B5%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9+%D0%BB%D1%8C%D0%B2%D1%96%D0%B2&amp;espv=2&amp;biw=1366&amp;bih=643&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwjY4K_18tPJAhUJv3IKHU1SAhsQ_AUIBigB&amp;dpr=1#imgrc=E-klNOkrGTjHzM%3A"
+    category = "сafe"
+    longitude = "49.835637"
+    latitude = "24.031865"
+    description = "Перший у Львові ресторан імпровізацій Грушевський cinema jazz – це мистецький центр з щоденними інструментальними імпровізаціями, переглядами популярного кіно, концертами наживо, виставками живопису, фотографій, ретро кіноафіш, презентаціями та читальнею. "
+    phone = "(098) 676 46 00"
+    website = "cinemajazz.virtual.ua/"
+    mark = "4.5"
+    worktime = "09:00 – 02:00"
+        costs = "free"/>
+    <record
+        name = "Пивний ресторан Королівська пивоварня"
+        image_url = "https://www.google.com.ua/search?q=%D0%BA%D0%BE%D1%80%D0%BE%D0%BB%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BF%D0%B8%D0%B2%D0%BE%D0%B2%D0%B0%D1%80%D0%BD%D1%8F&amp;espv=2&amp;biw=1366&amp;bih=643&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;sqi=2&amp;ved=0ahUKEwju5fCI9NPJAhWCjnIKHaszDOgQ_AUIBigB&amp;dpr=1#imgrc=NQfutbqqnej98M%3A"
+        category = "сafe"
+        longitude = "49.840665"
+        latitude = "24.032284"
+        description = "Великий ресторан-пивоварня в серці старого міста, де гармонійно поєднані вишукана європейська кухня з неповторним пивом власного виробництва."
+        phone = "(032) 236 80 80"
+        website = "royal-brewery.virtual.ua"
+        mark = "4.3"
+        worktime = "10:00 – 23:00"
+        costs = "free"/>
+    <record
+        name = "Ресторан-музей Гасова лямпа"
+        image_url = "https://www.google.com.ua/search?q=%D0%B3%D0%B0%D1%81%D0%BE%D0%B2%D0%B0+%D0%BB%D1%8F%D0%BC%D0%BF%D0%B0&amp;espv=2&amp;biw=1366&amp;bih=643&amp;tbm=isch&amp;tbo=u&amp;source=univ&amp;sa=X&amp;sqi=2&amp;ved=0ahUKEwi-prCo9dPJAhVifHIKHW5MDVgQsAQIJw&amp;dpr=1#imgrc=G30Km1yNwMmMoM%3A"
+        category = "сafe"
+        longitude = "49.843116"
+        latitude = "24.031619"
+        description = "Львів подарував світові гасову лямпу, яка пізніше стала відома як «Віденська». Її винайшли місцеві аптекарі Ян Зег та Ігнацій Лукасевич в 1853."
+        phone = "(050) 371 09 08"
+        website = "gasovalampa.lviv.ua/"
+        mark = "4.5"
+        worktime = "10:00 – 02:00"
+        costs = "free"/>
+    <record
+        name = "Львівська копальня кави"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add6c5400a455:0x4e926355eacb88f4!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://picasaweb.google.com/lh/sredir?uname%3D115545246290572577596%26id%3D6104929663648520674%26target%3DPHOTO!5z0LrQvtC_0LDQu9GM0L3RjyDQutCw0LLQuCAtINCf0L7RiNGD0LogR29vZ2xl&amp;sa=X&amp;sqi=2&amp;ved=0ahUKEwigwouO9tPJAhXiJXIKHVNrAx4QoioIczAN"
+        category = "сafe"
+        longitude = "49.841703"
+        latitude = "24.032759"
+        description = "Місто Львів здавна славиться не лише своєю архітектурною довершеністю та історичним багатством, а й заслуженим правом називатися кавовою столицею України."
+        phone = "(067) 670 61 06"
+        website = "https://www.facebook.com/coffeemanufacture"
+        mark = "4.6"
+        worktime = "08:00 – 23:00"
+        costs = "free"/>
+    <record
+        name = "Криївка"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add6c4c37f893:0x28c7c64d4a2cedf9!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://picasaweb.google.com/lh/sredir?uname%3D114145276719629815366%26id%3D6188363191014404130%26target%3DPHOTO!5z0LrRgNC40ZfQstC60LAgLSDQn9C-0YjRg9C6IEdvb2dsZQ&amp;sa=X&amp;sqi=2&amp;ved=0ahUKEwjH3Ma099PJAhWijXIKHSAcBq0QoioIdTAN"
+        category = "сafe"
+        longitude = "49.841292"
+        latitude = "24.032201"
+        description = "Кухня — українська, польова. Страви подають у військовому посуді. У ресторані є такі атракції, як тир та вільне користування зброєю."
+        phone = "(050) 430 63 54"
+        website = "http://www.fest.lviv.ua/uk/restaurants/kryjivka/"
+        mark = "4.6"
+        worktime = "00:00 – 24:00"
+        costs = "free"/>
+    <record
+        name = "Львівська шоколадна фабрика"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add6c5cada593:0xf8ec900ddfc6a21a!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://ssl.panoramio.com/photo/112915367!5z0YjQvtC60L7Qu9Cw0LTQvdCwINGE0LDQsdGA0LjQutCwIC0g0J_QvtGI0YPQuiBHb29nbGU&amp;sa=X&amp;ved=0ahUKEwi3yLHa-NPJAhXGnHIKHUlXDEAQoioIhAEwEA"
+        category = "сafe"
+        longitude = "49.841186"
+        latitude = "24.033167"
+        description = "Семиповерхова шоколадна фабрика у самому центрі Львова. Тут виготовляють найсмачніші у Львові цукерки  та шоколад."
+        phone = "(050) 430 63 54"
+        website = "http://www.chocolate.lviv.ua/"
+        mark = "4.7"
+        worktime = "09:00 – 22:00"
+        costs = "free"/>
+    <record
+        name = "Львівська шоколадна фабрика"
+        image_url = "https://www.google.com.ua/maps/uv?hl=uk&amp;pb=!1s0x473add6c5cada593:0xf8ec900ddfc6a21a!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://ssl.panoramio.com/photo/112915367!5z0YjQvtC60L7Qu9Cw0LTQvdCwINGE0LDQsdGA0LjQutCwIC0g0J_QvtGI0YPQuiBHb29nbGU&amp;sa=X&amp;ved=0ahUKEwi3yLHa-NPJAhXGnHIKHUlXDEAQoioIhAEwEA"
+        category = "сafe"
+        longitude = "49.841186"
+        latitude = "24.033167"
+        description = "Семиповерхова шоколадна фабрика у самому центрі Львова. Тут виготовляють найсмачніші у Львові цукерки  та шоколад."
+        phone = "(050) 430 63 54"
+        website = "http://www.chocolate.lviv.ua/"
+        mark = "4.7"
+        worktime = "09:00 – 22:00"
+        costs = "free"/>
+    <record
+        name = "Вероніка"
+        image_url = "https://www.google.com.ua/search?q=%D1%88%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%D0%B4%D0%BD%D0%B0+%D1%84%D0%B0%D0%B1%D1%80%D0%B8%D0%BA%D0%B0+%D0%BB%D1%8C%D0%B2%D1%96%D0%B2&amp;biw=1366&amp;bih=643&amp;espv=2&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwij-prr-NPJAhWCpnIKHaYwCXwQ_AUIBigB&amp;dpr=1#tbm=isch&amp;q=%D0%B2%D0%B5%D1%80%D0%BE%D0%BD%D1%96%D0%BA%D0%B0+%D0%BB%D1%8C%D0%B2%D1%96%D0%B2&amp;imgrc=waejSXMN2aDJQM%3A"
+        category = "сafe"
+        longitude = "49.836464"
+        latitude = "24.032244"
+        description = "Різноманітність та оригінальність страв запам’ятає кожен, щоб повернутись сюди знову та знову."
+        phone = "(032) 298 60 28"
+        website = "http://veronica.ua/"
+        mark = "4.6"
+        worktime = "09:00–23:00"
+        costs = "free"/>
+    <record
+        name = "Світ кави"
+        image_url = "https://www.google.com.ua/search?q=%D1%81%D0%B2%D1%96%D1%82+%D0%BA%D0%B0%D0%B2%D0%B8+%D0%BB%D1%8C%D0%B2%D1%96%D0%B2&amp;biw=1366&amp;bih=643&amp;espv=2&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;sqi=2&amp;ved=0ahUKEwi_lbn1-dPJAhVq9HIKHSgKCiAQ_AUIBigB#imgrc=OAgCoX-BpDHgGM%3A"
+        category = "сafe"
+        longitude = "49.840322"
+        latitude = "24.031732"
+        description = "Якщо ви хочете скуштувати у Львові філіжанку справді хорошої кави і посидіти у приємній атмосфері, вам необхідно завітати у «Світ кави»."
+        phone = "(032) 297 56 75"
+        website = "www.svitkavy.com/"
+        mark = "4.6"
+        worktime = "08:00–22:00"
+        costs = "free"/>
+    <record
+        name = "Дім легенд"
+        image_url = "https://www.google.com.ua/search?q=%D0%B4%D1%96%D0%BC+%D0%BB%D0%B5%D0%B3%D0%B5%D0%BD%D0%B4&amp;biw=1366&amp;bih=643&amp;espv=2&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwij2Ira-tPJAhVlp3IKHanIAlgQ_AUIBigB#imgrc=cZ7S5bGVKUQ6qM%3A"
+        category = "сafe"
+        longitude = "49.840931"
+        latitude = "24.034518"
+        description = "Саме тут офіційно пильнують за львівським часом, щоб годинникова стрілка не відставала і йшла точно по-львівськи."
+        phone = "(050) 430 29 24"
+        website = "www.svitkavy.com/"
+        mark = "4.6"
+        worktime = "11:00–02:00"
+        costs = "free"/>
+    <record
+        name = "Віденська кав'ярня"
+        image_url = "https://www.google.com.ua/search?q=%D0%B2%D1%96%D0%B4%D0%B5%D0%BD%D1%81%D1%8C%D0%BA%D0%B0+%D0%BA%D0%B0%D0%B2%27%D1%8F%D1%80%D0%BD%D1%8F&amp;biw=1366&amp;bih=643&amp;espv=2&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwix0dKu-9PJAhXBVHIKHTaUDEgQ_AUIBigB#imgrc=xosNIEKO579vmM%3A"
+        category = "сafe"
+        longitude = "49.840837"
+        latitude = "24.028935"
+        description = "Віденська - центр ділового життя міста. Центральне розташування ідеально підходить для бізнес-перемовин, офіційного прийняття, бенкету, чи просто сімейного обіду."
+        phone = "(032) 235 87 21"
+        website = "wienhotel.com.ua/uk/restaurant/"
+        mark = "3.8"
+        worktime = "08:00–22:00"
+        costs = "free"/>
+    <record
+        name = "Галерея Дзиґа"
+        image_url = "https://www.google.com.ua/search?q=%D0%B4%D0%B7%D0%B8%D0%B3%D0%B0&amp;noj=1&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwivktTv_NPJAhUDJnIKHYzJCEQQ_AUICCgB&amp;biw=1366&amp;bih=643#imgrc=BkipqPl1o9T0QM%3A"
+        category = "сafe"
+        longitude = "49.843335"
+        latitude = "24.033726"
+        description = "Це справді культове місце для мистецької еліти, просунутих туристів, авангардових тусовок."
+        phone = "(032) 297 56 12"
+        website = "http://dzyga.com/"
+        mark = "4.7"
+        worktime = "10:00–24:00"
+        costs = "free"/>
+
+    <record
+        name = "Музей народної архітектури і побуту Шевченківський гай"
+        image_url = "https://www.google.com.ua/search?q=%D0%B2%D1%83%D0%BB.%D0%A7%D0%B5%D1%80%D0%BD%D0%B5%D1%87%D0%B0+%D0%93%D0%BE%D1%80%D0%B0,+1+%D0%BB%D1%8C%D0%B2%D1%96%D0%B2&amp;biw=1366&amp;bih=643&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwjzpufT_tPJAhWD2SwKHdVLCGIQ_AUIBygC#imgrc=IbpeH_WDRILPpM%3A"
+        category = "museum"
+        longitude = "49.844075"
+        latitude = "24.065938"
+        description = "Музей народної архітектури та побуту у Львові - це музей під відкритим небом. де можна ознайомитись з побутом українців."
+        phone = "(032) 247 18 82"
+        website = " www.lvivskansen.org"
+        mark = "4.8"
+        worktime = "10:00–18:00"
+        costs = "free"/>
+    <record
+        name = "Музей Русалка Дністрова"
+        image_url = "https://www.google.com.ua/imgres?imgurl=https://upload.wikimedia.org/wikipedia/uk/9/94/%25D0%259C%25D1%2583%25D0%25B7%25D0%25B5%25D0%25B9_%25D0%25A0%25D1%2583%25D1%2581%25D0%25B0%25D0%25BB%25D0%25BA%25D0%25B8_%25D0%2594%25D0%25BD%25D1%2596%25D1%2581%25D1%2582%25D1%2580%25D0%25BE%25D0%25B2%25D0%25BE%25D1%2597.jpg&amp;imgrefurl=https://uk.wikipedia.org/wiki/%25D0%259C%25D1%2583%25D0%25B7%25D0%25B5%25D0%25B9_%25D0%25A0%25D1%2583%25D1%2581%25D0%25B0%25D0%25BB%25D0%25BA%25D0%25B8_%25D0%2594%25D0%25BD%25D1%2596%25D1%2581%25D1%2582%25D1%2580%25D0%25BE%25D0%25B2%25D0%25BE%25D1%2597&amp;h=3456&amp;w=2592&amp;tbnid=qL6wQuzW6bEcmM:&amp;tbnh=160&amp;tbnw=119&amp;docid=eN9_nuErTrip0M&amp;itg=1&amp;usg=__2ABT3vzxIxVGDBpcjtipQ2DIekE="
+        category = "museum"
+        longitude = "49.836113"
+        latitude = "24.022627"
+        description = "Музей Русалка Дністрова - музей історії найвизначнішої книги галицьких українців і діяльності громадсько-культурного угруповання Руська Трійця."
+        phone = "(032) 298 74 82"
+        website = "www.lvivskansen.org"
+        mark = "4.4"
+        worktime = "11:00–16:00"
+        costs = "free"/>
+    <record
+        name = "Музей зброї Арсенал"
+        image_url = "https://www.google.com.ua/search?q=%D0%B2%D1%83%D0%BB.+%D0%9F%D1%96%D0%B4%D0%B2%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0,+5,+%22%D0%90%D1%80%D1%81%D0%B5%D0%BD%D0%B0%D0%BB%22&amp;biw=1366&amp;bih=643&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwi9yOzVgNTJAhVCkywKHTTpDHQQ_AUIBygC#imgrc=1vVK5wWPaQXxmM%3A"
+        category = "museum"
+        longitude = "49.841259"
+        latitude = "24.035288 "
+        description = "Музей-Арсенал - експозиційний відділ Львівського історичного музею. відкритий 18 травня 1981 року в приміщенні колишнього Міського арсеналу - визначної пам’ятки архітектури XVI століття."
+        phone = "(032) 235 86 61"
+        website = "www.lhm.lviv.ua"
+        mark = "4.7"
+        worktime = "10:00–17:30"
+        costs = "free"/>
+
 </object>

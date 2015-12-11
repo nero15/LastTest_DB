@@ -1,6 +1,7 @@
 package com.example.mykola.lasttest;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.mykola.lasttest.SQLiteDataBase.DBHelper;
 import com.example.mykola.lasttest.SQLiteDataBase.Table;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,35 +34,64 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText usernameTxt, passwordTxt;
     Button loginBtn;
+    CheckBox stayInSysem;
     TextView newAcBtn;
-    DBHelper dbHelper;// = new DBHelper(getApplicationContext());
-    SQLiteDatabase sqLiteDatabase;// = dbHelper.getReadableDatabase();
-
-//    DatabaseHandler dbHelper;
-//    List<UsersDatabase> Users = new ArrayList<UsersDatabase>();
-
+    DBHelper dbHelper;
+    SQLiteDatabase sqLiteDatabase;
+    final String login_userName= "Login_userName", login_userPass = "Login_userPass", login_CB = "Login_CB";
 
     public void define(){
         usernameTxt = (EditText)findViewById(R.id.txtUsername);
         passwordTxt = (EditText)findViewById(R.id.txtPassword);
         loginBtn = (Button)findViewById(R.id.btnLogin);
         newAcBtn = (TextView)findViewById(R.id.tvRegisterLink);
-
-        //dbHelper = new DatabaseHandler(getApplicationContext());
+        stayInSysem = (CheckBox)findViewById(R.id.id_Login_CB);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        DBHelper dbHelper = new DBHelper(this);
-        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        dbHelper = new DBHelper(this);
+////*******
+//        sqLiteDatabase = dbHelper.getWritableDatabase();
+//        dbHelper.repairDB(sqLiteDatabase, false, true, false, false);
+//        sqLiteDatabase.close();
+////*******
         define();
         NewAccountBtnOnClick();
         LoginBtnEnable();
         LoginBtnOnClick();
+        load();
     }
+    public void onClickLoginCB(View v){
 
+    }
+    public void Save(String name, String pass, Boolean CB){
+        SharedPreferences sharedPreferences;
+        sharedPreferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sharedPreferences.edit();
+        ed.putString(login_userName, name);
+        ed.putString(login_userPass, pass);
+        ed.putBoolean(login_CB,CB);
+        ed.commit();
+        //Toast.makeText(this, "Text saved", Toast.LENGTH_SHORT).show();
+    }
+    public void load(){
+        SharedPreferences sharedPreferences;
+        sharedPreferences = getPreferences(MODE_PRIVATE);
+                usernameTxt.setText(sharedPreferences.getString(login_userName, ""));
+                passwordTxt.setText(sharedPreferences.getString(login_userPass, ""));
+                stayInSysem.setSelected(sharedPreferences.getBoolean(login_CB, false));
+        //Toast.makeText(this, "Text loaded", Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        define();
+        usernameTxt.setText("");
+        passwordTxt.setText("");
+    }
     public void NewAccountBtnOnClick(){
         newAcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,11 +101,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
     public void LoginBtnOnClick(){
+        sqLiteDatabase = dbHelper.getReadableDatabase();
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dbHelper.logAllRecords(sqLiteDatabase, Table.User_table.TABLE_NAME);
                 String[] projection = new String[]{
                         Table.User_table.NAME,
                         Table.User_table.PASSWORD
@@ -83,10 +116,17 @@ public class LoginActivity extends AppCompatActivity {
                         passwordTxt.getText().toString()
                 };
                 Cursor cursor = dbHelper.getDataSelect(sqLiteDatabase, Table.User_table.TABLE_NAME,projection,
-                        projection[0] + " = ? AND " + projection[1] + " = ? ",Args);
-                if (cursor != null) {
+                        Table.User_table.NAME + " = ? AND " + Table.User_table.PASSWORD + " = ? ",Args);
+                if (cursor.moveToFirst()) {
+                    if (stayInSysem.isChecked()) {
+                        Save(usernameTxt.getText().toString(),passwordTxt.getText().toString(),true);
+                    }
+                    else{
+                        Save("","",false);
+                    }
                     Intent LoginToMain = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(LoginToMain);
+                    finish();
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "Неправильний логін або пароль", Toast.LENGTH_LONG).show();

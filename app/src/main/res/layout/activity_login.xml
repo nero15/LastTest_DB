@@ -28,6 +28,15 @@
         android:inputType="textPassword"
         android:layout_height="wrap_content" />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Login_stayInSysem"
+        android:id="@+id/id_Login_CB"
+        android:layout_gravity="center"
+        android:checked="false"
+        android:onClick="onClickLoginCB" />
+
     <Button
         android:id="@+id/btnLogin"
         android:text="Login"

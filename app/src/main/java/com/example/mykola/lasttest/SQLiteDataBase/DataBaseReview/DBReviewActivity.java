@@ -8,14 +8,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Address;
 import android.location.Geocoder;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -51,29 +50,45 @@ public class DBReviewActivity extends AppCompatActivity {
         Log.i("Review", "onCreate");
     }
     public void onChecked(View v){ //TODO: Checked function
-        if (((RadioButton)v).isChecked())
-            category = ((RadioButton)v).getText().toString();
-//        switch (v.getId()){
-//            case R.id.id_RD_All:
-//                break;
-//            case R.id.id_RD_Cafe:
-//                break;
-//            case R.id.id_RD_Cinema:
-//                break;
-//            case R.id.id_RD_Hotel:
-//                break;
-//            case R.id.id_RD_Monument:
-//                break;
-//            case R.id.id_RD_Museum:
-//                break;
-//            case R.id.id_RD_Shop:
-//                break;
-//            case R.id.id_RD_Theatre:
-//                break;
-//        }
+
+        switch (v.getId()){
+            case R.id.id_RD_All:
+                if (((RadioButton)v).isChecked())
+                    category = "All";
+                break;
+            case R.id.id_RD_Cafe:
+                if (((RadioButton)v).isChecked())
+                    category = "cafe";
+                break;
+            case R.id.id_RD_Cinema:
+                if (((RadioButton)v).isChecked())
+                    category = "cinema";
+                break;
+            case R.id.id_RD_Hotel:
+                if (((RadioButton)v).isChecked())
+                    category = "hotel";
+                break;
+            case R.id.id_RD_Monument:
+                if (((RadioButton)v).isChecked())
+                    category = "monument";
+                break;
+            case R.id.id_RD_Museum:
+                if (((RadioButton)v).isChecked())
+                    category = "museum";
+                break;
+            case R.id.id_RD_Shop:
+                if (((RadioButton)v).isChecked())
+                    category = "shop";
+                break;
+            case R.id.id_RD_Theatre:
+                if (((RadioButton)v).isChecked())
+                    category = "theatre";
+                break;
+        }
     }
     public void onClickSearch(View v){
-        if (category == null ) category = "All";
+        if (category == null )
+            category = "All";
         showObject(category);
     }
     protected void showObject(String args){
@@ -84,6 +99,7 @@ public class DBReviewActivity extends AppCompatActivity {
                 R.layout.standart_db_object,
                 getFragmentManager(),
                 this);
+        listDataAdapter.clear();
         listView.setAdapter(listDataAdapter);
         dbHelper = new DBHelper(getApplicationContext());
         sqLiteDatabase = dbHelper.getReadableDatabase();

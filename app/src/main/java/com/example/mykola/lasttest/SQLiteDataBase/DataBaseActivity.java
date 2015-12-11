@@ -19,13 +19,8 @@ public class DataBaseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_data_base);
         review = (Button) findViewById(R.id.ReviewDBButton);
         add =(Button) findViewById(R.id.AddDBButton);
+    }
 
-    }
-    private void active(Button button, boolean state){
-        button.setActivated(state);
-        button.setAlpha(state ? 1f : 0.5f);
-        button.setClickable(state);
-    }
     public void onClickReview(View v){
         Intent intent = new Intent(this,DBReviewActivity.class);
         startActivity(intent);
@@ -42,7 +37,7 @@ public class DataBaseActivity extends AppCompatActivity {
         SQLiteDatabase sqLiteDatabase;
         dbHelper = new DBHelper(getApplication());
         sqLiteDatabase = dbHelper.getWritableDatabase();
-        dbHelper.repairDB(sqLiteDatabase);
+        dbHelper.repairDB(sqLiteDatabase,true,false,false,false);
         sqLiteDatabase.close();
         dbHelper.close();
     }

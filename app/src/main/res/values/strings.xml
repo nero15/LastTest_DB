@@ -1,4 +1,5 @@
 <resources>
+    <string name="Login_stayInSysem">Залишится у системі</string>
     <string name="app_name">LastTest</string>
     <string name="title_activity_map">Карта</string>
     <string name="show_all_objects">Показати усі об’єкти з БД</string>
@@ -39,7 +40,6 @@
     <string name="type_cusine">Вид кухні</string>
     <string name="ACCEPT">Прийняти</string>
     <string name="CANCEL">Відмінити</string>
-    <string name="addCinema">Додати кінотеатр</string>
 
 
 </resources>

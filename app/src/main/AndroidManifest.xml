@@ -17,11 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
+
+            <!--
+            intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter!
+            -->
         </activity>
 
         <meta-data
@@ -42,8 +45,14 @@
         <activity android:name=".SQLiteDataBase.AddDBActivity" />
         <activity android:name=".SQLiteDataBase.DataBaseReview.DBReviewActivity" />
         <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".AnketaReview.AnketaActivity"></activity>
     </application>
 
 </manifest>

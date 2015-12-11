@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/addCinema"
+        android:text="@string/Cinema"
         android:id="@+id/id_head_txt"
         android:layout_gravity="center"
         android:layout_marginTop="10dp" />

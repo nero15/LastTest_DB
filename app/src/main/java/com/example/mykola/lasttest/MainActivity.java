@@ -42,6 +42,6 @@ public class MainActivity extends AppCompatActivity {
         ed.putString(Table.Object_standart.LONGITUDE, longitude.toString());
         ed.putString(Table.Object_standart.LATITUDE, latitude.toString());
         ed.commit();
-        Toast.makeText(this, "Text saved", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Text saved", Toast.LENGTH_SHORT).show();
     }
 }

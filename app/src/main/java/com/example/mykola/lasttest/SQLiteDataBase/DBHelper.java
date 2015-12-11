@@ -75,10 +75,17 @@ public class DBHelper extends SQLiteOpenHelper {
         Toast.makeText(fContext, "Data Save!", Toast.LENGTH_LONG).show();
     }
 
-    public void repairDB(SQLiteDatabase db){
-        deleteTable(db, Table.Object_standart.TABLE_NAME);
-        deleteTable(db, Table.User_table.TABLE_NAME);
-        deleteTable(db,Table.Waybill_table.TABLE_NAME);
+    public void repairDB(SQLiteDatabase db,
+                         Boolean objectTable, Boolean userTable,
+                         Boolean WaybillTable, Boolean Question){
+        if (objectTable)
+            deleteTable(db, Table.Object_standart.TABLE_NAME);
+        if (userTable)
+            deleteTable(db, Table.User_table.TABLE_NAME);
+        if (WaybillTable)
+            deleteTable(db,Table.Waybill_table.TABLE_NAME);
+        if (Question)
+            deleteTable(db, Table.Question_table.TABLE_NAME);
 //        deleteTable(db, Table.Cinema_table.TABLE_NAME);
 //        deleteTable(db, Table.Cafe_table.TABLE_NAME);
 //        deleteTable(db, Table.Hotel_table.TABLE_NAME);
@@ -123,13 +130,21 @@ public class DBHelper extends SQLiteOpenHelper {
     public void FillAllTable(SQLiteDatabase db) {
         Resources res = fContext.getResources();
         XmlResourceParser _xml = res.getXml(R.xml.all_records);
-        fillTable(db, _xml);
-
+        fillTable(db, Table.Object_standart.allField, Table.Object_standart.TABLE_NAME, _xml);
+        _xml = res.getXml(R.xml.question_records);
+        fillTable(db, Table.Question_table.allField, Table.Question_table.TABLE_NAME, _xml);
+        DBHelper dbHelper = new DBHelper(fContext);
+        db.close();
+        db = dbHelper.getReadableDatabase();
+        logAllRecords(db, Table.Question_table.TABLE_NAME);
+        db.close();
+        db = dbHelper.getWritableDatabase();
     }
     public void createAllTable(SQLiteDatabase db){
         db.execSQL(Table.Object_standart.CREATE_OBJECT);
         db.execSQL(Table.User_table.CREATE_USER);
         db.execSQL(Table.Waybill_table.CREATE_WAYBILL);
+        db.execSQL(Table.Question_table.CREATE_QUESTION);
         //logAllRecords(db, Table.Object_standart.TABLE_NAME);
 //        db.execSQL(Table.Notebook_table.CREATE_NOTEBOOK);
 //        db.execSQL(Table.Cinema_table.CREATE_CINEMA);
@@ -159,20 +174,19 @@ public class DBHelper extends SQLiteOpenHelper {
             }
         cursor.close();
     }
-
-    public void fillTable(SQLiteDatabase db, XmlResourceParser _xml){
+    public void fillTable(SQLiteDatabase db, String[] allField,String table_name,XmlResourceParser _xml){
         ContentValues values = new ContentValues();
         try {
             int eventType = _xml.getEventType();
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 if ((eventType == XmlPullParser.START_TAG) && (_xml.getName().equals("record"))) {
                     values.clear();
-                    for(int i=0;i< Table.Object_standart.allField.length;i++) {
-                        values.put(Table.Object_standart.allField[i], _xml.getAttributeValue(i));
+                    for(int i=0;i< allField.length;i++) {
+                        values.put(allField[i], _xml.getAttributeValue(i));
                         String str = _xml.getAttributeValue(i);
-                        Log.i("DATABASE_OPERATIONS",Table.Object_standart.allField[i] + ";" + str);
+                        Log.i("DATABASE_OPERATIONS",allField[i] + ";" + str);
                     }
-                    db.insert(Table.Object_standart.TABLE_NAME, null, values);
+                    db.insert(table_name, null, values);
                 }
                 eventType = _xml.next();
             }
@@ -180,7 +194,30 @@ public class DBHelper extends SQLiteOpenHelper {
         catch (XmlPullParserException e) {Log.i("DATABASE_OPERATIONS", e.getMessage(), e);}
         catch (IOException e) {Log.i("DATABASE_OPERATIONS", e.getMessage(), e);}
         finally {_xml.close();}
-        logAllRecords(db, Table.Object_standart.TABLE_NAME);
-        Log.i("DATABASE_OPERATIONS", Table.Object_standart.TABLE_NAME + " completion");
+        logAllRecords(db, table_name);
+        Log.i("DATABASE_OPERATIONS", table_name+ " completion");
     }
+//    public void fillTable(SQLiteDatabase db, XmlResourceParser _xml){
+//        ContentValues values = new ContentValues();
+//        try {
+//            int eventType = _xml.getEventType();
+//            while (eventType != XmlPullParser.END_DOCUMENT) {
+//                if ((eventType == XmlPullParser.START_TAG) && (_xml.getName().equals("record"))) {
+//                    values.clear();
+//                    for(int i=0;i< Table.Object_standart.allField.length;i++) {
+//                        values.put(Table.Object_standart.allField[i], _xml.getAttributeValue(i));
+//                        String str = _xml.getAttributeValue(i);
+//                        Log.i("DATABASE_OPERATIONS",Table.Object_standart.allField[i] + ";" + str);
+//                    }
+//                    db.insert(Table.Object_standart.TABLE_NAME, null, values);
+//                }
+//                eventType = _xml.next();
+//            }
+//        }
+//        catch (XmlPullParserException e) {Log.i("DATABASE_OPERATIONS", e.getMessage(), e);}
+//        catch (IOException e) {Log.i("DATABASE_OPERATIONS", e.getMessage(), e);}
+//        finally {_xml.close();}
+//        logAllRecords(db, Table.Object_standart.TABLE_NAME);
+//        Log.i("DATABASE_OPERATIONS", Table.Object_standart.TABLE_NAME + " completion");
+//    }
 }

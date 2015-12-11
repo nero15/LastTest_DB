@@ -1,5 +1,6 @@
 package com.example.mykola.lasttest.SQLiteDataBase;
 
+import com.google.android.gms.games.quest.Quest;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 
@@ -45,7 +46,7 @@ public class Table {
         };
 
         public static final String CREATE_OBJECT=
-                "CREATE TABLE " +  Object_standart.TABLE_NAME + " (" +
+                "CREATE TABLE IF NOT EXISTS " +  Object_standart.TABLE_NAME + " (" +
                         Object_standart.ID + " integer PRIMARY KEY AUTOINCREMENT, " +
                         Object_standart.IMAGE_URL + " TEXT NOT NULL DEFAULT \""+ DefaultValue.IMAGE_URL+"\", " +
                         Object_standart.NAME + " TEXT NOT NULL, " +
@@ -174,7 +175,7 @@ public class Table {
         public static final String ID = "id";
         public static final String NAME = "name";
         public static final String PASSWORD = "password";
-        public static final String META_DATA = "meta data";
+        public static final String META_DATA = "metaData";
 
         public static final String CREATE_USER=
                 "CREATE TABLE IF NOT EXISTS " +  User_table.TABLE_NAME + " (" +
@@ -200,6 +201,23 @@ public class Table {
                         Waybill_table.NAME + " TEXT NOT NULL," +
                         Waybill_table.META_DATA + " TEXT NOT NULL);";
         // 23.56;45.67;\n45.665;34.5657;
+    }
+    /* Anketa */
+    public static abstract  class Question_table{
+        public static final String TABLE_NAME = "QuestionTab";
 
+        public static final String ID = "id";
+        public static final String QUESTION = "question";
+        public static final String ANSWER = "ANSWER";
+        public static final String[] allField = new String[]{
+                Question_table.QUESTION,
+                Question_table.ANSWER
+        };
+        public static final String CREATE_QUESTION =
+                "CREATE TABLE IF NOT EXISTS " +  Question_table.TABLE_NAME + " (" +
+                        Question_table.ID + " integer PRIMARY KEY AUTOINCREMENT," +
+                        Question_table.QUESTION + " TEXT NOT NULL," +
+                        Question_table.ANSWER + " TEXT NOT NULL);";
+        // answer1;answer2;
     }
 }

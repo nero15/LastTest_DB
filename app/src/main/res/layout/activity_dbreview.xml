@@ -6,92 +6,100 @@
     android:layout_height="match_parent"
     tools:context="com.example.mykola.lasttest.SQLiteDataBase.DataBaseReview.DBReviewActivity">
 
-    <TableLayout
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/scrollView"
+        android:layout_margin="15dp">
+
+        <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="127dp"
+                        android:orientation="vertical"
+                        android:weightSum="1"
+                        android:scrollbars="horizontal">
+
+
+            <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Hotel"
+            android:id="@+id/id_RD_Hotel"
+            android:onClick="onChecked"
+                android:layout_weight="0.25" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Monument"
+            android:id="@+id/id_RD_Monument"
+            android:onClick="onChecked"
+            android:layout_weight="0.25" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Museum"
+            android:id="@+id/id_RD_Museum"
+            android:onClick="onChecked"
+            android:layout_weight="0.25" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Shop"
+            android:id="@+id/id_RD_Shop"
+            android:onClick="onChecked"
+            android:layout_weight="0.25" />
+
+
+                        <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/All"
+                        android:id="@+id/id_RD_All"
+                        android:checked="true"
+                        android:onClick="onChecked"
+                        android:layout_weight="0.25" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Cinema"
+                        android:id="@+id/id_RD_Cinema"
+                        android:onClick="onChecked"
+                        android:layout_weight="0.25" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Theatre"
+                        android:id="@+id/id_RD_Theatre"
+                        android:onClick="onChecked"
+                        android:layout_weight="0.25" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Cafe"
+                        android:id="@+id/id_RD_Cafe"
+                        android:onClick="onChecked"
+                        android:layout_weight="0.25" />
+
+        </RadioGroup>
+    </ScrollView>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp">
+        android:text="@string/search"
+        android:id="@+id/id_Btn_Search"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:onClick="onClickSearch" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/All"
-                android:id="@+id/id_RD_All" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Cinema"
-                android:id="@+id/id_RD_Cinema"
-                android:layout_column="1" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Theatre"
-                android:id="@+id/id_RD_Theatre"
-                android:layout_column="3"
-                android:layout_span="9" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Cafe"
-                android:id="@+id/id_RD_Cafe"
-                android:layout_column="11" />
-        </TableRow>
-
-        <TableRow android:layout_marginTop="-30dp"
-            android:layout_marginBottom="-25dp">
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
-                android:text="@string/search"
-                android:id="@+id/id_Btn_Search"
-                android:layout_column="30"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="30dp"
-                android:onClick="onClickSearch" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Hotel"
-                android:id="@+id/id_RD_Hotel" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Monument"
-                android:id="@+id/id_RD_Monument"
-                android:layout_column="1" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Museum"
-                android:id="@+id/id_RD_Museum"
-                android:layout_column="11" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Shop"
-                android:id="@+id/id_RD_Shop"
-                android:layout_column="11" />
-        </TableRow>
-
-    </TableLayout>
 
     <ListView
     android:layout_width="match_parent"
