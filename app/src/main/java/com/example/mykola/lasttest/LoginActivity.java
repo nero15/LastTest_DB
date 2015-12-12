@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -17,15 +15,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.example.mykola.lasttest.SQLiteDataBase.DatabaseHandler;
-//import com.example.mykola.lasttest.SQLiteDataBase.UsersDatabase;
-
 import com.example.mykola.lasttest.SQLiteDataBase.DBHelper;
 import com.example.mykola.lasttest.SQLiteDataBase.Table;
-import com.google.android.gms.maps.model.LatLng;
 
-import java.util.ArrayList;
-import java.util.List;
+//import com.example.mykola.lasttest.SQLiteDataBase.DatabaseHandler;
+//import com.example.mykola.lasttest.SQLiteDataBase.UsersDatabase;
 
 /**
  * Created by natalia on 09.12.15.
@@ -34,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText usernameTxt, passwordTxt;
     Button loginBtn;
+    Button SingButton;
     CheckBox stayInSysem;
     TextView newAcBtn;
     DBHelper dbHelper;
@@ -46,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = (Button)findViewById(R.id.btnLogin);
         newAcBtn = (TextView)findViewById(R.id.tvRegisterLink);
         stayInSysem = (CheckBox)findViewById(R.id.id_Login_CB);
+        SingButton = (Button)findViewById(R.id.SingButton);
     }
 
     @Override
@@ -135,6 +131,11 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    public void SingButtonClick(View view){
+        Intent LoginToMain = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(LoginToMain);
+        finish();
+    }
     public void LoginBtnEnable(){
         usernameTxt.addTextChangedListener(new TextWatcher() {
             @Override

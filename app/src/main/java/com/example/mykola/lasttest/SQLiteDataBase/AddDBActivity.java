@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,16 +13,24 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mykola.lasttest.MapActivity;
 import com.example.mykola.lasttest.R;
+import com.google.android.gms.maps.model.LatLng;
 
 public class AddDBActivity extends AppCompatActivity {
 
-    EditText name,longitude,latitude,phone,site,work_time;
+    public static EditText longitude, latitude;
+
+    EditText name,phone,site,work_time;
     CheckBox myLocation;
     Context context = this;
     DBHelper dbHelper;
     SQLiteDatabase sqLiteDatabase;
     String longitude_num,latitude_num;
+    Button buttonMap;
+
+    public static LatLng locationDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +42,7 @@ public class AddDBActivity extends AppCompatActivity {
         phone = (EditText) findViewById(R.id.id_phone);
         site = (EditText) findViewById(R.id.id_site);
         work_time = (EditText) findViewById(R.id.id_work_time);
+        buttonMap = (Button)findViewById(R.id.buttonMap);
 
     }
     private void active(View obj, boolean state){
@@ -100,6 +109,12 @@ public class AddDBActivity extends AppCompatActivity {
         longitude_num = sharedPreferences.getString(Table.Object_standart.LONGITUDE, "");
         latitude_num = sharedPreferences.getString(Table.Object_standart.LATITUDE, "");
         //Toast.makeText(this, "Text loaded", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onButtonMapClic(View view){
+        MapActivity.addLocation = true;
+        Intent addDBToMap = new Intent(this, MapActivity.class);
+        startActivity(addDBToMap);
     }
 
 }

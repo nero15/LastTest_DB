@@ -85,14 +85,30 @@
     </LinearLayout>
     //phone number
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/my_location"
-        android:id="@+id/id_myLocation"
-        android:layout_gravity="center_horizontal"
-        android:checked="false"
-        android:onClick="checkClick" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_location"
+            android:id="@+id/id_myLocation"
+            android:checked="false"
+            android:onClick="checkClick"
+            android:singleLine="false" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="map"
+            android:id="@+id/buttonMap"
+            android:textSize="15dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="onButtonMapClic" />
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"

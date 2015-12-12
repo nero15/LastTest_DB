@@ -53,5 +53,15 @@
         android:layout_height="wrap_content"
         android:clickable="true" />
 
+    <Button
+        android:id="@+id/SingButton"
+        android:text="Увійти як гість"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:singleLine="false"
+        android:onClick="SingButtonClick" />
+
 </LinearLayout>
 
