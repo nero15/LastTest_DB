@@ -1,4 +1,5 @@
 package com.example.mykola.lasttest;
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -10,6 +11,8 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -40,7 +43,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import org.json.JSONObject;
@@ -54,17 +56,26 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Vector;
 
 public class MapActivity extends AppCompatActivity {
     GoogleMap googleMap;
-    List<Marker> markers = new ArrayList<Marker>();
+    ArrayList<Marker> markers = new ArrayList<Marker>();
     Marker my_location;
     Boolean showObject;
-    Polyline wayPolyline;
+
+    LatLng myPosition;
+
     Marker currentMarker;
 
+    ArrayList<Marker> markersWay = new ArrayList<Marker>();
+
     public static boolean addLocation = false;
+
+    public static boolean add_way = false;
+
+    Button buttonAddWay;
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -72,7 +83,7 @@ public class MapActivity extends AppCompatActivity {
      */
     private GoogleApiClient client;
 
-    void DrawWay(LatLng origin,LatLng dest, String mode){ //mode: {"driving", "walking ", "bicycling"}
+    void DrawWay(LatLng origin, LatLng dest, String mode) { //mode: {"driving", "walking ", "bicycling"}
 
         // Getting URL to the Google Directions API
         String url = getDirectionsUrl(origin, dest, mode);
@@ -83,12 +94,20 @@ public class MapActivity extends AppCompatActivity {
         downloadTask.execute(url);
     }
 
+    void DrawWay(Marker marker1, Marker marker2, String mode) {
+        LatLng origin = new LatLng(marker1.getPosition().latitude, marker1.getPosition().longitude);
+        LatLng dest = new LatLng(marker2.getPosition().latitude, marker2.getPosition().longitude);
+        DrawWay(origin, dest, mode);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         createMapView();
+
+        buttonAddWay = (Button) findViewById(R.id.buttonAddWay);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -97,35 +116,34 @@ public class MapActivity extends AppCompatActivity {
 //        drawWay();
 //        if (true) return;
         Uri data = getIntent().getData();
-        if (data != null){
-            Button btn1,btn2,btn3;
+        if (data != null) {
+            Button btn1, btn2, btn3;
             btn1 = (Button) findViewById(R.id.id_show_on_map_objects);
             btn2 = (Button) findViewById(R.id.id_clear_map);
             btn3 = (Button) findViewById(R.id.id_show_near_object);
-            active(btn1,false);
-            active(btn2,false);
-            active(btn3,false);
+            active(btn1, false);
+            active(btn2, false);
+            active(btn3, false);
             showObject = true;
             String str;
             str = data.toString();
-            Log.i("Map",str);
-            Double longitude,latitude;
-            String name = str.substring(0,str.indexOf(";"));
-            str = str.replace(name + ";","");
+            Log.i("Map", str);
+            Double longitude, latitude;
+            String name = str.substring(0, str.indexOf(";"));
+            str = str.replace(name + ";", "");
             latitude = Double.parseDouble(str.substring(0, str.indexOf(";")));
             str = str.replace(latitude.toString() + ";", "");
             longitude = Double.parseDouble(str.substring(0, str.length() - 1));
-            addMarker(latitude,longitude,name,BitmapDescriptorFactory.defaultMarker(),true);
+            addMarker(latitude, longitude, name, BitmapDescriptorFactory.defaultMarker(), true);
             //zoomToPoint(new LatLng(latitude,longitude),10);
-        }
-        else{
-            Button btn1,btn2,btn3;
+        } else {
+            Button btn1, btn2, btn3;
             btn1 = (Button) findViewById(R.id.id_show_on_map_objects);
             btn2 = (Button) findViewById(R.id.id_clear_map);
             btn3 = (Button) findViewById(R.id.id_show_near_object);
-            active(btn1,true);
-            active(btn2,true);
-            active(btn3,true);
+            active(btn1, true);
+            active(btn2, true);
+            active(btn3, true);
             showObject = false;
             locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);//Geo
         }
@@ -162,20 +180,36 @@ public class MapActivity extends AppCompatActivity {
                 googleMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
                     @Override
                     public void onMapLongClick(LatLng latLng) {
-                        if(addLocation){
-                        AddDBActivity.latitude.setText(String.valueOf(latLng.latitude));
-                        AddDBActivity.longitude.setText(String.valueOf(latLng.longitude));
+                        if (addLocation) {
+                            AddDBActivity.latitude.setText(String.valueOf(latLng.latitude));
+                            AddDBActivity.longitude.setText(String.valueOf(latLng.longitude));
                             addLocation = false;
 
                             googleMap.addMarker(new MarkerOptions()
                                             .position(latLng)
-                                            .title("+")
-                                            .draggable(false)
+                                            .title(getCompleteAddressString(latLng.latitude, latLng.longitude))
+                                            .draggable(true)
                             );
 
                         }
+                        else showWayDialoq(getCompleteAddressString(latLng.latitude,latLng.longitude),"Адрес");
                     }
                 });
+
+                googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                    @Override
+                    public void onMapClick(LatLng latLng) {
+                        if (add_way) {
+                            markersWay.add(googleMap.addMarker(new MarkerOptions()
+                                            .position(latLng)
+                                            .title("!")
+                                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                                            .draggable(true)
+                            ));
+                        }
+                    }
+                });
+
             }
         } catch (NullPointerException exception) {
             Log.e("mapApp", exception.toString());
@@ -202,10 +236,12 @@ public class MapActivity extends AppCompatActivity {
             googleMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
         }
     }
-    protected void zoomToPoint(LatLng position, Integer zoom){
+
+    protected void zoomToPoint(LatLng position, Integer zoom) {
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(position));
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(zoom));
     }
+
     private LocationManager locationManager;
     private LocationListener locationListener = new LocationListener() {
 
@@ -285,7 +321,7 @@ public class MapActivity extends AppCompatActivity {
                             .draggable(true)
                             .icon(color)
                             .visible(visible)
-            );
+                                );
             if (!markers.contains(marker) && name != "Me") markers.add(marker);
         }
         return marker;
@@ -306,21 +342,26 @@ public class MapActivity extends AppCompatActivity {
     }
 
     public void onClickClearMap(View v) {
+        myPosition = my_location.getPosition();
         googleMap.clear();
         markers.clear();
+        markersWay.clear();
         load();
+
         my_location = addMarker(
-                my_location.getPosition().latitude,
-                my_location.getPosition().longitude,
-                "Me",BitmapDescriptorFactory.defaultMarker(),true);
+                myPosition.latitude,
+                myPosition.longitude,
+                "Me", BitmapDescriptorFactory.defaultMarker(), true);
 
 
     }
+
     public void onClickShowAllObjects(View v) {
         addToMapAll(true);
     }
-    protected void addToMapAll(boolean paint){
-        DBHelper dbHelper=new DBHelper(getApplicationContext());
+
+    protected void addToMapAll(boolean paint) {
+        DBHelper dbHelper = new DBHelper(getApplicationContext());
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
         String[] projections = new String[]
                 {
@@ -331,25 +372,26 @@ public class MapActivity extends AppCompatActivity {
         Cursor cursor = dbHelper.getData(sqLiteDatabase, Table.Object_standart.TABLE_NAME, projections);
         addObjectToMap(cursor, null, paint);
     }
+
     protected void zoomCamera(final Vector<LatLng> point) {
 
         final View mapView = getFragmentManager().findFragmentById(R.id.mapView).getView();
         if (mapView.getViewTreeObserver().isAlive()) {
             mapView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                @Override
-                public void onGlobalLayout() {
-                    LatLngBounds.Builder builder = new LatLngBounds.Builder();
-                    for (int i =0;i<point.size();i++)
-                        builder.include(point.get(i));
-                    LatLngBounds bound = builder.build();
-                    googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bound, 50));
-                }
-            }
+                                                                        @Override
+                                                                        public void onGlobalLayout() {
+                                                                            LatLngBounds.Builder builder = new LatLngBounds.Builder();
+                                                                            for (int i = 0; i < point.size(); i++)
+                                                                                builder.include(point.get(i));
+                                                                            LatLngBounds bound = builder.build();
+                                                                            googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bound, 50));
+                                                                        }
+                                                                    }
             );
         }
     }
 
-    protected void addObjectToMap(Cursor cursor, BitmapDescriptor color, boolean show){
+    protected void addObjectToMap(Cursor cursor, BitmapDescriptor color, boolean show) {
 
         if (cursor != null)
             if (cursor.moveToFirst()) {
@@ -360,13 +402,13 @@ public class MapActivity extends AppCompatActivity {
                     longitude = Double.parseDouble(cursor.getString(cursor.getColumnIndex(Table.Object_standart.LONGITUDE)));
                     latitude = Double.parseDouble(cursor.getString(cursor.getColumnIndex(Table.Object_standart.LATITUDE)));
                     addMarker(longitude, latitude, name,
-                            color == null ? BitmapDescriptorFactory.defaultMarker(): color,show);
+                            color == null ? BitmapDescriptorFactory.defaultMarker() : color, show);
                 } while (cursor.moveToNext());
             }
         cursor.close();
     }
 
-    public void Save(Double longitude, Double latitude){
+    public void Save(Double longitude, Double latitude) {
         SharedPreferences sharedPreferences;
         sharedPreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sharedPreferences.edit();
@@ -375,21 +417,23 @@ public class MapActivity extends AppCompatActivity {
         ed.commit();
         //Toast.makeText(this, "Text saved", Toast.LENGTH_SHORT).show();
     }
-    public void load(){
-    SharedPreferences sharedPreferences;
-    sharedPreferences = getPreferences(MODE_PRIVATE);
+
+    public void load() {
+        SharedPreferences sharedPreferences;
+        sharedPreferences = getPreferences(MODE_PRIVATE);
         my_location.setPosition(new LatLng(
                 Double.parseDouble(sharedPreferences.getString(Table.Object_standart.LONGITUDE, "")),
                 Double.parseDouble(sharedPreferences.getString(Table.Object_standart.LATITUDE, ""))));
-    //Toast.makeText(this, "Text loaded", Toast.LENGTH_SHORT).show();
-}
-    private void active(Button button, boolean state){
+        //Toast.makeText(this, "Text loaded", Toast.LENGTH_SHORT).show();
+    }
+
+    private void active(Button button, boolean state) {
         button.setActivated(state);
         button.setAlpha(state ? 1f : 0f);
         button.setClickable(state);
     }
 
-    public void drawWay(){
+    public void drawWay() {
 
     }
 
@@ -423,6 +467,37 @@ public class MapActivity extends AppCompatActivity {
         );
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
+    }
+
+    private String getDirectionsUrl(ArrayList<Marker> markersWay1, String mode) {
+
+        // Origin of route
+        String str_origin = "origin=" + markersWay1.get(0).getPosition().latitude + "," + markersWay1.get(0).getPosition().longitude;
+
+        // Destination of route
+        String str_dest = "destination=" + markersWay1.get(markersWay1.size() - 1).getPosition().latitude + "," + markersWay1.get(markersWay1.size() - 1).getPosition().longitude;
+        String sensor = "sensor=false";
+        // Building the parameters to the web service
+        String parameters = str_origin + "&" + str_dest + "&" + sensor + "&mode" + mode;
+        // Sensor enabled
+        String wayPoints = "&waypoints=";
+        if (markersWay1.size() > 2) {
+
+            wayPoints += markersWay1.get(1).getPosition().latitude + "," + markersWay1.get(1).getPosition().longitude;
+            for (int i = 2; i < markersWay1.size() - 2; i++)
+                wayPoints += "|" + markersWay1.get(i).getPosition().latitude + "," + markersWay1.get(i).getPosition().longitude;
+
+        parameters = str_origin + "&" + str_dest +wayPoints+ "&" + sensor + "&mode" + mode;
+        }
+
+        // Output format
+        String output = "json";
+
+        // Building the url to the web service
+        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters;
+
+
+        return url;
     }
 
     private String getDirectionsUrl(LatLng origin, LatLng dest, String mode) {
@@ -544,6 +619,7 @@ public class MapActivity extends AppCompatActivity {
 
                 // Starts parsing data
                 routes = parser.parse(jObject);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -584,8 +660,10 @@ public class MapActivity extends AppCompatActivity {
             }
 
             // Drawing polyline in the Google Map for the i-th route
-            if (wayPolyline != null) wayPolyline.remove();
-            wayPolyline = googleMap.addPolyline(lineOptions);
+            //   if (wayPolyline != null) wayPolyline.remove();
+            googleMap.addPolyline(lineOptions);
+            showWayDialoq(DirectionsJSONParser.ShowInfo(), "Маршрут");
+
         }
     }
 
@@ -595,7 +673,7 @@ public class MapActivity extends AppCompatActivity {
         switch (id) {
             // массив
             case 1:
-                mItemsName = new String[]{"Маршрут", "Про цей об\'єкт"};
+                mItemsName = new String[]{"Маршрут", "Про цей об\'єкт","Адрес"};
                 adb.setTitle("Зробіть вибір");
                 // adb.setItems(mItemsName, myClickListener1);
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -609,7 +687,11 @@ public class MapActivity extends AppCompatActivity {
                 adb.setItems(mItemsName, myClickListener2);
                 break;
 
-
+            case 3:
+                mItemsName = new String[]{"Автомобіль", "Пішки", "Велосипед"};
+                adb.setTitle("Зробіть вибір");
+                adb.setItems(mItemsName, myClickListener3);
+                break;
 
         }
         return adb.create();
@@ -626,22 +708,92 @@ public class MapActivity extends AppCompatActivity {
                 case 1:
                     startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("http://www.google.com/search?q=" + currentMarker.getTitle())));
                     break;
+                case 2:
+                    showWayDialoq(getCompleteAddressString(currentMarker.getPosition().latitude,currentMarker.getPosition().longitude),"Адрес");
+                    break;
             }
         }
     };
 
     OnClickListener myClickListener2 = new OnClickListener() {
         public void onClick(DialogInterface dialog, int item) {
-            LatLng origin = my_location.getPosition();
-            LatLng dest = currentMarker.getPosition();
             final String[] mode = {"driving", "walking ", "bicycling"};
             // Getting URL to the Google Directions API
-            DrawWay(origin, dest, mode[item]);
-
-
-
+            DrawWay(my_location, currentMarker, mode[item]);
         }
     };
+
+    OnClickListener myClickListener3 = new OnClickListener() {
+        public void onClick(DialogInterface dialog, int item) {
+            final String[] mode = {"driving", "walking ", "bicycling"};
+            showWay_with_wayPoints(mode[item]);
+        markersWay.clear();
+        }
+    };
+
+    public void showWay_with_wayPoints(String mode) {
+        String url = getDirectionsUrl(markersWay, mode);
+
+        DownloadTask downloadTask = new DownloadTask();
+
+        // Start downloading json data from Google Directions API
+        downloadTask.execute(url);
+    }
+
+    public void showWayDialoq(String Message,String title) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MapActivity.this);
+        builder.setTitle(title)
+                .setMessage(/*"Вкажіть точки на карті по яких буде пролягати маршрут"*/ Message)
+                .setCancelable(false)
+                .setNegativeButton("Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    public void OnClickAddWay(View view) {
+        if (!add_way) {
+            showWayDialoq("Вкажіть точки на карті по яких буде пролягати маршрут","Маршрут");
+            add_way = true;
+            buttonAddWay.setText("Прокласти маршрут");
+        } else {
+            if (markersWay.size() != 0)
+
+                showDialog(3);
+            buttonAddWay.setText("Маршрут");
+            add_way = false;
+
+        }
+    }
+
+    private String getCompleteAddressString(double LATITUDE, double LONGITUDE) {
+        String strAdd = "";
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+        try {
+            List<Address> addresses = geocoder.getFromLocation(LATITUDE, LONGITUDE, 1);
+            if (addresses != null) {
+                Address returnedAddress = addresses.get(0);
+                StringBuilder strReturnedAddress = new StringBuilder("");
+
+                for (int i = 0; i < returnedAddress.getMaxAddressLineIndex(); i++) {
+                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
+                }
+                strAdd = strReturnedAddress.toString();
+                Log.w("My Current loction address", "" + strReturnedAddress.toString());
+            } else {
+                Log.w("My Current loction address", "No Address returned!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.w("My Current loction address", "Canont get Address!");
+        }
+        return strAdd;
+    }
+
 
 
 }
